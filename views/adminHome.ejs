@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+</head>
+<body>
+    <h1>Admin Home</h1>
+
+    <% if (users.length > 0) { %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Profile Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user.name %></td>
+                        <td><a href = "/page/<%= user.profileImage %>"><%= user.profileImage %></a></td>
+                        <td>
+                            <form method="post" action="/admin/modifyUser" enctype="multipart/form-data">
+                                <input type="hidden" name="userId" value="<%= user._id %>">
+                                <label for="name">Name: </label>
+                                <input type="text" name="name" placeholder="New Name">
+                                <label for="profileImage">Profile Image</label>
+                                <input type="file" name="profileImage" placeholder="New Profile Image URL">
+                                <button type="submit">Modify</button>
+                            </form>
+                            <form method="post" action="/admin/deleteUser" onsubmit="return confirm('Are you sure you want to delete this user\'s profile?');">
+                                <input type="hidden" name="userId" value="<%= user._id %>">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No users found.</p>
+    <% } %>
+    <form action="/admin/logout" method="POST" onsubmit = "return confirm('Do you want to logout?')">
+        <button type="submit">Logout</button>
+      </form>
+</body>
+</html>
