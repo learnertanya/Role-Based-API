@@ -13,11 +13,11 @@ Role Based Access Control Application built with ExpressJs ,view the deployment 
 
 ### User Authentication
 
-- **POST `/api/auth/user/signup`**: Sign up a new user.
+- **POST `/auth/user/signup`**: Sign up a new user.
   - Request: Create a new user account.
   - Response: User account created successfully.
 
-- **POST `/api/auth/user/login`**: User login.
+- **POST `/auth/user/login`**: User login.
   - Request: Log in with user credentials.
   - Response: User logged in successfully.
 
