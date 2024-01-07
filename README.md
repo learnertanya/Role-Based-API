@@ -23,22 +23,22 @@ Role Based Access Control Application built with ExpressJs ,view the deployment 
 
 ### Admin Authentication
 
-- **POST `/api/auth/admin/signup`**: Sign up a new admin.
+- **POST `/auth/admin/signup`**: Sign up a new admin.
   - Request: Create a new admin account.
   - Response: Admin account created successfully.
 
-- **POST `/api/auth/admin/login`**: Admin login.
+- **POST `/auth/admin/login`**: Admin login.
   - Request: Log in with admin credentials.
   - Response: Admin logged in successfully.
 ### User HomePage
-- **POST `/api/user/update`**: For Name and Profileimage updation.
-- **POST `/api/user/delete`**: For deleting User account.
-- **POST `/api/user/logout`**: Logging out.
+- **POST `/user/update`**: For Name and Profileimage updation.
+- **POST `/user/delete`**: For deleting User account.
+- **POST `/user/logout`**: Logging out.
 ### Admin HomePage
-- **GET `/api/admin/users`** : Get all users info.
-- **POST `/api/admin/modifyUser`**: For Name and Profileimage updation of a user.
-- **POST `/api/admin/deleteUser`**: For deleting User account of a user.
-- **POST `/api/admin/logout`**: Logging out.
+- **GET `/admin/users`** : Get all users info.
+- **POST `/admin/modifyUser`**: For Name and Profileimage updation of a user.
+- **POST `/admin/deleteUser`**: For deleting User account of a user.
+- **POST `/admin/logout`**: Logging out.
 
   ## Preview
   - Homepage
